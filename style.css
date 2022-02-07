@@ -1,0 +1,82 @@
+:root{
+  --body-bg-color:white;
+}
+
+body{
+  height: 100vh;
+  width: 100vw;
+  border: none;
+  padding: 0;
+  margin: 0;  
+  background-color: var(--body-bg-color);
+  font-size: 16px;
+  box-sizing:border-box;
+}
+.navbar{
+  height: 2rem;
+  padding:0;
+  margin:0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: whitesmoke;
+  font-size: 1.5rem;
+}
+
+li{
+  border-right: 2px black solid;
+}
+li:last-of-type{
+  border: none;
+}
+li>a{
+  text-decoration: none;
+  color: black;
+}
+
+ul, li{
+  display:inline;
+  padding:0 1rem;
+  margin: 0;
+}
+
+section{
+  padding: 0 15rem;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+}
+
+h1{
+  font-size: 3rem;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  padding:10px;
+  margin-bottom:25px;
+}
+h1>span{
+  color: var(--body-bg-color);
+}
+
+button#change-color{
+  background-color: black;
+  outline: none;
+  border: black 2px solid;
+  border-radius: 15px;
+  color: white;
+  padding: 15px;
+  margin-top: 25px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+button#change-color:hover{
+  border: #aaa 2px solid;
+}
+
+button#change-color:active{
+  background-color: #555;
+}
