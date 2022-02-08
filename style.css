@@ -1,5 +1,5 @@
 :root{
-  --body-bg-color:white;
+  --bg-color:green;
 }
 
 body{
@@ -8,7 +8,7 @@ body{
   border: none;
   padding: 0;
   margin: 0;  
-  background-color: var(--body-bg-color);
+  background-color: var(--bg-color);
   font-size: 16px;
   box-sizing:border-box;
 }
@@ -30,9 +30,17 @@ li{
 li:last-of-type{
   border: none;
 }
-li>a{
+#simple{
+  text-decoration: underline;
+  cursor: pointer;
+}
+#rgba{
   text-decoration: none;
-  color: black;
+  cursor: pointer;
+}
+#hex{
+  text-decoration: none;
+  cursor: pointer;
 }
 
 ul, li{
@@ -58,7 +66,7 @@ h1{
   margin-bottom:25px;
 }
 h1>span{
-  color: var(--body-bg-color);
+  color: var(--bg-color);
 }
 
 button#change-color{
