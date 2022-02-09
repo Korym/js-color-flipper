@@ -1,24 +1,24 @@
 const btn = document.getElementById("change-color");
 const colorDisplay = document.getElementById('colorDisplay');
 const simple = document.getElementById("simple");
-const rgba = document.getElementById("rgba");
+const rgb = document.getElementById("rgb");
 const hex = document.getElementById("hex");
 const root = document.querySelector(":root");
 let simplepage = true;
-let rgbapage = false;
+let rgbpage = false;
 let hexpage = false;
-const simpleColors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet", "black", "brown", "aqua"];
+const simpleColors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet", "brown", "aqua"];
 
-function getRand() {
+function getRand(max = simpleColors.length) {
   let num;
   if (simplepage) {
-    num = Math.floor(Math.random() * (simpleColors.length));
+    num = Math.floor(Math.random() * max);
     return num;
-  } else if (rgbapage) {
-    num = Math.floor(Math.random() * 255) + 1;
+  } else if (rgbpage) {
+    num = Math.floor(Math.random() * max) + 1;
     return num;
   } else {
-    num = Math.floor(Math.random() * 16).toString(16);
+    num = Math.floor(Math.random() * max).toString(16);
   }
   return num;
 }
@@ -27,6 +27,10 @@ function buildColor() {
   let color;
   if (simplepage) {
     color = simpleColors[getRand()];
+  } else if (rgbpage) {
+    color = `rgb(${getRand(255)}, ${getRand(255)}, ${getRand(255)})`;
+  } else {
+    color = `#${getRand(16)}${getRand(16)}${getRand(16)}${getRand(16)}${getRand(16)}${getRand(16)}`
   }
   return color;
 }
@@ -34,24 +38,27 @@ function buildColor() {
 simple.addEventListener('click', () => {
   hex.style.textDecoration = "none";
   simple.style.textDecoration = "underline";
-  rgba.style.textDecoration = "none";
+  rgb.style.textDecoration = "none";
   simplepage = true;
   hexpage = false;
-  rgbapage = false;
-
-  // console.log(colors[num], num);
-
+  rgbpage = false;
 })
-// rgba.addEventListener('click', () => {
-//   hex.style.textDecoration = "none";
-//   simple.style.textDecoration = "none";
-//   rgba.style.textDecoration = "underline";
-// })
-// hex.addEventListener('click', () => {
-//   hex.style.textDecoration = "underline";
-//   simple.style.textDecoration = "none";
-//   rgba.style.textDecoration = "none";
-// })
+rgb.addEventListener('click', () => {
+  hex.style.textDecoration = "none";
+  simple.style.textDecoration = "none";
+  rgb.style.textDecoration = "underline";
+  simplepage = false;
+  hexpage = false;
+  rgbpage = true;
+})
+hex.addEventListener('click', () => {
+  hex.style.textDecoration = "underline";
+  simple.style.textDecoration = "none";
+  rgb.style.textDecoration = "none";
+  simplepage = false;
+  hexpage = true;
+  rgbpage = false;
+})
 
 btn.addEventListener('click', () => {
   let newcolor = buildColor();

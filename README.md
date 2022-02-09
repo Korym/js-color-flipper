@@ -14,7 +14,7 @@ The main concepts are to use :
 
 This project will be different in that instead of having a simple view and a hex view, I will have three views:
   * simple
-  * rgba
+  * rgb
   * hex
 
 Additionally, instead of having different pages for each view, I plan to have everything in the same index.html page, and switch between views through the JS page only.
