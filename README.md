@@ -7,7 +7,7 @@ The main concepts are to use :
   *  document.getElementById()
   *  document.querySelector()
   *  addEventListener()
-  *  document.body.style.backgroundColor
+  *  ELEMENT.style.setProperty()
   *  Math.floor()
   *  Math.random()
   *  array.length
@@ -23,8 +23,10 @@ Additionally, instead of having different pages for each view, I plan to have ev
 
 To start I'm going to set up the HTML and CSS pages with a header, a title that'll show the color of the background, and a button to change the color of the background.  I'll then set up the JS page to listen for the button click and change the color to a chosen color.
 
-Just like the original app, this one will be a simple color flipper that has a fixed, standard list of colors stored in an array.  I'll probably just use the colors of the rainbow and maybe a few extra. The colors will just be color names, not rgba or hex values.  The colors will be chosen at random when the user clicks on the button.
+Just like the original app, this one will be a simple color flipper that has a fixed, standard list of colors stored in an array.  I'll probably just use the colors of the rainbow and maybe a few extra. The colors will just be color names, not rgb or hex values.  The colors will be chosen at random when the user clicks on the button.
 
-The next iteration, will be to use rgba and get random colors when the change color button is clicked.
+The next iteration, will be to use rgb and get random colors when the change color button is clicked.
 
 The third iteration will use hex values chosen randomly when the change color button is clicked.
+
+The original project called for using document.body.style.backgroundColor() to change the background color.  I decided that I wanted to use a variable in the CSS so that I could use the same color wherever I needed. This causedme to change what was being set to ELEMENT.style.setProperty(), where ELEMENT is the :root selector.
